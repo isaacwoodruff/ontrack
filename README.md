@@ -39,7 +39,7 @@ The target audiences for this website are:
 
 ### Developer Goals
 - To track issues/bugs in their project
-- To stay on track with projects goals
+- To stay on track with project goals
 
 ## User Stories
 ### Developer User Stories
@@ -61,6 +61,31 @@ A developer using onTrack expects to:
 ## Existing Features
 
 ## Features Left To Implement
+##### Sign Up Page
+- Shows a registration form
+- Has a link at the bottom that redirects to the sign in page if the user already has an account
+
+##### Sign In Page
+- Shows a sign in form
+- Has a link at the bottom to sign up if the user doesn't have an account
+- Has a 'Forgot Password' option
+
+##### User Profile Page
+- Displays a form with user profile details. The form is autopopulated from their account in the database
+- The user has two options on the page, update their profile or delete their account
+
+##### Delete Account Page
+- Asks the user if they are sure they want to delete their profile
+- Requires the user to confirm with their email and password
+
+##### Dashboard
+- Shows current issues
+- Option to create, read, update, or delete an issue
+- Two different views available, Kanban or Scrum
+
+##### Checkout
+- A page to upgrade the user account for access to more features
+- The checkout uses webhooks to confirm with Stripe API whether the payment is complete or not
 
 # Technologies Used
 
