@@ -52,6 +52,9 @@ A developer using onTrack expects to:
 ## Design Choices
 
 ## Wireframes
+The following wireframes were designed with Balsamiq.
+
+[Desktop wireframes](https://github.com/isaacwoodruff/ontrack/blob/main/desktop-wireframes.png)
 
 # Information Architecture
 
