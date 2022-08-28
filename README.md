@@ -61,6 +61,36 @@ The following wireframes were designed with Balsamiq.
 # Information Architecture
 
 ## Database Models
+#### User Model
+The User model for this project is the standard User model provided by Django.
+
+#### ExtendedUser Model
+Key | Validation | Field Type |
+--- | --- | ---
+user | User, on_delete=models.CASCADE | OneToOneField
+avatar | null=False | ImageField
+job_title | max_length=50, null=False | CharField
+github | max_length=50, null=False | CharField
+slug | null=False, unique=True | SlugField
+
+#### Issue Model
+Key | Validation | Field Type |
+--- | --- | ---
+id | null=False, unique=True | PrimaryKey
+issue | null=False | TextField
+issue_type | max_length=50, choices=ISSUE_TYPE_CHOICES | CharField
+kanban_type | max_length=50, choices=KANBAN_TYPE_CHOICES | CharField
+project | max_length=50, null=False | ForeignKey
+user | max_length=50, null=False | ForeignKey
+created_date | auto_now_add=True | DateTimeField
+
+#### Project Model
+Key | Validation | Field Type |
+--- | --- | ---
+id | null=False, unique=True | PrimaryKey
+project_name | max_length=50, null=False | CharField
+created_date | auto_now_add=True | DateTimeField
+slug | null=False, unique=True | SlugField
 
 # Features
 ## Existing Features
