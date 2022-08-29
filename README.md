@@ -1,6 +1,8 @@
 # onTrack
 onTrack was created to provide a way for developers to track bugs/issues for their projects.
 
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/isaacwoodruff/ontrack/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/isaacwoodruff/ontrack/tree/main)
+
 ## Table of Contents
 
 1. [UX](#ux)
@@ -133,7 +135,14 @@ slug | null=False, unique=True | SlugField
 ### Libraries
 
 # Testing
+### Continuous Integration
+CircleCI was used to test integration of the project. Pylint is run during these test to check for errors and enforces a coding standard in the Python language. All unit tests are run during the CircleCI build.
+
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/isaacwoodruff/ontrack/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/isaacwoodruff/ontrack/tree/main)
+
 ### Validation Tools
+These tools were used to test the validity of the code for this project:
+- [Pylint-django](https://pypi.org/project/pylint-django/) and [Microsofts Python Extension for VSCode](https://marketplace.visualstudio.com/items?itemName=ms-python.python) was used to validate Python.
 
 ### Testing Matrix
 
