@@ -127,10 +127,21 @@ slug | null=False, unique=True | SlugField
 # Technologies Used
 
 ### Programming Languages
+- This project uses **HTML**, **CSS**, **JavaScript** and **Python**.
 
 ### Tools
+- [Django](https://www.djangoproject.com/) as a python web application framework for faster development.
+- [Visual Studio Code](https://code.visualstudio.com/) as the Integrated Development Environment while developing this project.
+- [PIP](https://pip.pypa.io/en/stable/installing/) to install the tools needed in this project.
+- [Git](https://git-scm.com) for version control during the development process. 
+- [GitHub](https://github.com/) for a remote repository.
+- [CircleCI](https://circleci.com/) for Continuous Integration.
+- [Balsamiq](https://balsamiq.com/) to build wireframes in the planning stage of development.
+- [python-dotenv](https://pypi.org/project/python-dotenv/) to make use of environment variables.
+- [Pylint-django](https://pypi.org/project/pylint-django/) for improving code analysis when analysing code using Django.
 
 ### Databases
+- [SQlite3](https://www.sqlite.org/index.html) as the database for the development environment, provided by django.
 
 ### Libraries
 
