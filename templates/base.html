@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        {% load static %}
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- custom css -->
+        <link rel="stylesheet" href="{% static 'css/main.css' %}">
+
+        <title>{% if page_title %}
+            {{ page_title }} | onTrack
+            {% else %}
+            onTrack
+            {% endif %}</title>
+    </head>
+
+    <body>
+        
+        <header>
+            
+        </header>
+        
+        <main>
+            {% block content %}{% endblock %}
+        </main>
+    
+        <footer>
+
+            {% block footer %}{% endblock %}
+
+        </footer>
+
+        {% block javascript %} {% endblock %}
+        
+    </body>
+
+</html>
