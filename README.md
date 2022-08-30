@@ -166,6 +166,8 @@ These tools were used to test the validity of the code for this project:
 ### Content
 
 ### Media
+- The default user image is from [flaticon](
+https://www.flaticon.com/free-icon/user_848043?term=user&page=1&position=33&page=1&position=33&related_id=848043&origin=search)
 
 ### Code
 
