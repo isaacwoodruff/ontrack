@@ -1,0 +1,12 @@
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+    padding-bottom: 70px;
+}
+
+#login-form {
+    max-width: 400px;
+}
