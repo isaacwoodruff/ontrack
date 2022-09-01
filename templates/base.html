@@ -41,23 +41,25 @@
                         </div>
                     {% else %}
                         <div class="col-md-3 text-end">
-                            <button type="button" class="btn btn-outline-primary me-2">Login</button>
-                            <button type="button" class="btn btn-primary">Sign-up</button>
+                            <a href="{% url 'sign_in' %}" class="btn btn-outline-primary me-2">Sign In</a>
+                            <a href="{% url 'sign_up' %}" class="btn btn-primary">Sign Up</a>
                         </div>
                     {% endif %}
                 </div>
             </div>
           </header>
         
-        <main>
+        <main class="container">
             {% block content %}{% endblock %}
         </main>
     
-        <footer>
+        <div class="navbar fixed-bottom">
+            <footer>
 
-            {% block footer %}{% endblock %}
+                {% block footer %}{% endblock %}
 
-        </footer>
+            </footer>
+        </div>
 
         {% block javascript %} {% endblock %}
         <!-- Bootstrap JavaScript Bundle with Popper -->
