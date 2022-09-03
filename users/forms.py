@@ -14,6 +14,9 @@ class UserForm(UserCreationForm):
         self.helper.form_class = 'mt-5'
         self.helper.form_method = 'post'
         self.helper.form_group_wrapper_class = 'form-group'
+        self.fields['email'].required = True
+        self.fields['first_name'].required = True
+        self.fields['last_name'].required = True
         self.helper.layout = Layout(
             Div(
                 Div(
