@@ -66,14 +66,13 @@ The following wireframes were designed with Balsamiq.
 #### User Model
 The User model for this project is the standard User model provided by Django.
 
-#### ExtendedUser Model
+#### Profile Model
 Key | Validation | Field Type |
 --- | --- | ---
 user | User, on_delete=models.CASCADE | OneToOneField
 avatar | null=False | ImageField
 job_title | max_length=50, null=False | CharField
 github | max_length=50, null=False | CharField
-slug | null=False, unique=True | SlugField
 
 #### Issue Model
 Key | Validation | Field Type |

@@ -1,1 +1,16 @@
 {% extends 'base.html' %}
+
+{% block content %}
+{% load crispy_forms_tags %}
+
+<div class="row justify-content-center">
+    <div class="col-12" id="login-form">
+        {% csrf_token %}
+        {% crispy form form.helper %}
+
+        <div class="text-center my-5">
+            <p>Already a member? <a href="{% url 'sign_in' %}" class="text-decoration-none">Sign In</a></p>
+        </div>
+    </div>
+</div>
+{% endblock %}
