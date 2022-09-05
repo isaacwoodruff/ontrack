@@ -8,7 +8,7 @@ class Profile(models.Model):
     The Profile model extends the user model with a one-to-one relationship.
     If the Profile is deleted then it automatically deletes the user too
     '''
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
     github = models.CharField(max_length=100, blank=True)
     job_title = models.CharField(max_length=30, blank=True)
     avatar = models.ImageField(upload_to='img')
