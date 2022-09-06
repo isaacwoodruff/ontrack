@@ -4,6 +4,10 @@ from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 
 class UserForm(UserCreationForm):
+    '''
+    UserForm extends the UserCreationForm and customizes it with fields specified in Meta.
+    The form is then styled on the backend with crispy_forms
+    '''
     class Meta:
         model = User
         fields = ["first_name", "last_name", "username", "email", "password1", "password2"]
@@ -34,6 +38,10 @@ class UserForm(UserCreationForm):
         )
 
 class SignIn(AuthenticationForm):
+    '''
+    SignIn form extends the AuthenticationForm and customizes the styling 
+    on the backend with crispy_forms
+    '''
     class Meta:
         model = User
         fields = ["username", "password"]
