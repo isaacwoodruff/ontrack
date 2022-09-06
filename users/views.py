@@ -1,9 +1,12 @@
-from django.shortcuts import render
 from django.views.generic.edit import FormView
 from django.contrib.auth import authenticate, login
 from .forms import UserForm
 
 class SignUpView(FormView):
+    '''
+    Class based sign up view that displays the crispy UserForm built in forms.py
+    If the form is valid, it saves a new user to the database, then the user is logged in
+    '''
     template_name = 'users/sign-up.html'
     form_class = UserForm
     success_url = '/profile'
