@@ -33,6 +33,15 @@ class AuthenticationTests(TestCase):
             }, follow=True)
         self.assertTrue(response.context['user'].is_active)
 
+    def test_logout_view(self):
+        user = User.objects.get(username='elliotalderson')
+        self.client.force_login(user)
+        confirm_login_response = self.client.post('/profile', follow=True)
+        self.assertEqual(confirm_login_response.context['user'].username, 'elliotalderson')
+
+        response = self.client.post('/sign-out', follow=True)
+        self.assertFalse(response.context['user'].is_active)
+
     def test_sign_up_view(self):
         self.client.post(reverse('sign_up'), {
                 'first_name':'Bojack',
