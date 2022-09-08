@@ -1,5 +1,6 @@
 from django.views.generic.edit import FormView
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
+from django.http import HttpResponseRedirect
 from .forms import UserForm
 
 class SignUpView(FormView):
@@ -22,3 +23,7 @@ class SignUpView(FormView):
         page_title = "Sign In"
         context["page_title"] = page_title
         return context
+
+def logout_view(request):
+    logout(request)
+    return HttpResponseRedirect("/")
