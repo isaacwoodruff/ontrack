@@ -13,3 +13,7 @@ body {
 #login-form {
     max-width: 400px;
 }
+
+main {
+    margin-top: 100px;
+}
