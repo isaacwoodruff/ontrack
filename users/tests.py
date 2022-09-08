@@ -1,5 +1,5 @@
 from django.test import TestCase
-from django.test import Client
+from django.urls import reverse
 from django.contrib.auth.models import User
 
 from users.models import Profile
@@ -27,5 +27,19 @@ class AuthenticationTests(TestCase):
         user.save()
 
     def test_login_view(self):
-        response = self.client.post('/', {'username':'elliotalderson', 'password':'password'}, follow=True)
+        response = self.client.post('/', {
+            'username':'elliotalderson',
+            'password':'password'
+            }, follow=True)
         self.assertTrue(response.context['user'].is_active)
+
+    def test_sign_up_view(self):
+        self.client.post(reverse('sign_up'), {
+                'first_name':'Bojack',
+                'last_name':'Horseman',
+                'username':'bojackhorseman',
+                'email':'bojackhorseman@gmail.com',
+                'password1':'A43qf78bqfyF',
+                'password2':'A43qf78bqfyF'
+            }, follow=True)
+        self.assertIsNotNone(User.objects.get(username='bojackhorseman'))
