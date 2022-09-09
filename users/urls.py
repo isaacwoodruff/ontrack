@@ -17,4 +17,5 @@ urlpatterns = [
         name='sign_in'),
     path('sign-up', views.SignUpView.as_view(), name='sign_up'),
     path('profile/', login_required(TemplateView.as_view(template_name="users/profile.html"))),
+    path('sign-out', views.logout_view, name='logout'),
 ]

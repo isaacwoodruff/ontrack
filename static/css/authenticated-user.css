@@ -1,0 +1,8 @@
+#top-nav {
+    margin-left: 200px;
+}
+
+#side-nav {
+    box-shadow: 1em 0 1rem -1rem rgb(0 0 0 / 15%);
+    width: 200px;
+}
