@@ -144,6 +144,7 @@ slug | null=False, unique=True | SlugField
 - [SQlite3](https://www.sqlite.org/index.html) as the database for the development environment, provided by django.
 
 ### Libraries
+- [Pillow](https://pypi.org/project/Pillow/) adds image processing capabilities to Python.
 
 # Testing
 ### Continuous Integration
