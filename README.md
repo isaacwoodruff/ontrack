@@ -1,5 +1,5 @@
 # onTrack
-onTrack was created to provide a way for developers to track bugs/issues for their projects.
+onTrack was created to provide a way for developers to track issues for their projects.
 
 [![CircleCI](https://dl.circleci.com/status-badge/img/gh/isaacwoodruff/ontrack/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/isaacwoodruff/ontrack/tree/main)
 
@@ -96,7 +96,6 @@ slug | null=False, unique=True | SlugField
 # Features
 ## Existing Features
 
-## Features Left To Implement
 ##### Sign Up Page
 - Shows a registration form
 - Has a link at the bottom that redirects to the sign in page if the user already has an account
@@ -105,6 +104,8 @@ slug | null=False, unique=True | SlugField
 - Shows a sign in form
 - Has a link at the bottom to sign up if the user doesn't have an account
 - Has a 'Forgot Password' option
+
+## Features Left To Implement
 
 ##### User Profile Page
 - Displays a form with user profile details. The form is autopopulated from their account in the database
@@ -143,6 +144,7 @@ slug | null=False, unique=True | SlugField
 - [SQlite3](https://www.sqlite.org/index.html) as the database for the development environment, provided by django.
 
 ### Libraries
+- [Pillow](https://pypi.org/project/Pillow/) adds image processing capabilities to Python.
 
 # Testing
 ### Continuous Integration
