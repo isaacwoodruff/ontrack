@@ -4,9 +4,9 @@ jobs:
   test-and-lint:
     docker:
       - image: cimg/python:3.10.1
-    environment:
-      SECRET_KEY: this_is_secret
-      DEVELOPMENT: True
+      environment:
+        SECRET_KEY: this_is_secret
+        DEVELOPMENT: True
     steps:
       - checkout
       - run:
@@ -16,11 +16,17 @@ jobs:
           name: lint
           command: pylint ontrack/
       - run:
+          name: run migrations
+          command: python3 manage.py migrate
+      - run:
           name: collect static files
           command: python3 manage.py collectstatic
       - run:
           name: run tests
           command: python manage.py test
+      - run:
+          name: run server
+          command: python manage.py runserver
 
 workflows:
   build-and-test-workflow:
