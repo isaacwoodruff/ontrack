@@ -16,6 +16,9 @@ jobs:
           name: lint
           command: pylint ontrack/
       - run:
+          name: run migrations
+          command: python3 manage.py migrate
+      - run:
           name: collect static files
           command: python3 manage.py collectstatic
       - run:
