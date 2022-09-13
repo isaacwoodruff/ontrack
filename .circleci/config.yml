@@ -4,9 +4,9 @@ jobs:
   test-and-lint:
     docker:
       - image: cimg/python:3.10.1
-      environment:
-        SECRET_KEY: this_is_secret
-        DEVELOPMENT: True
+    environment:
+      SECRET_KEY: this_is_secret
+      DEVELOPMENT: True
     steps:
       - checkout
       - run:

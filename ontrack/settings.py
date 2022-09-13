@@ -94,7 +94,7 @@ DATABASES = {
     }
 }
 
-if os.environ.get('DEVELOPMENT') != 'True':
+if str(os.environ.get('DEVELOPMENT')).capitalize() != 'True':
     DATABASES['default'] = dj_database_url.parse(os.environ.get('DATABASE_URL'), conn_max_age=600)
 
 
