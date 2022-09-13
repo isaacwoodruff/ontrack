@@ -139,12 +139,19 @@ slug | null=False, unique=True | SlugField
 - [Balsamiq](https://balsamiq.com/) to build wireframes in the planning stage of development.
 - [python-dotenv](https://pypi.org/project/python-dotenv/) to make use of environment variables.
 - [Pylint-django](https://pypi.org/project/pylint-django/) for improving code analysis when analysing code using Django.
+- [Django Crispy Forms](https://django-crispy-forms.readthedocs.io/en/latest/) to style django forms on the backend.
+- [Heroku](https://www.heroku.com/) for hosting and deployment.
+- [Whitenoise](http://whitenoise.evans.io/en/stable/) to allow the web app to serve its own static files.
+- [Gunicorn](https://pypi.org/project/gunicorn/) a Python Web Server Gateway Interface HTTP server to aid in deployment of the Django project for heroku deployment.
 
 ### Databases
 - [SQlite3](https://www.sqlite.org/index.html) as the database for the development environment, provided by django.
+- [PostgreSQL](https://www.postgresql.org/) as the database for the deployed site, hosted on Heroku.
+- [Psycopg2](https://pypi.org/project/psycopg2/) as a DB API 2.0 compliant PostgreSQL driver for Python.
 
 ### Libraries
 - [Pillow](https://pypi.org/project/Pillow/) adds image processing capabilities to Python.
+- [Bootstrap](https://getbootstrap.com/) to develop responsive and mobile-first pages more easily.
 
 # Testing
 ### Continuous Integration
