@@ -1,7 +1,9 @@
 from django.views.generic.edit import FormView
 from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponseRedirect
-from .forms import UserForm
+from django.shortcuts import render, redirect
+from .forms import UserForm, EditProfileForm, UserUpdateForm
+from django.contrib.auth.models import User
 
 class SignUpView(FormView):
     '''
@@ -27,3 +29,24 @@ class SignUpView(FormView):
 def logout_view(request):
     logout(request)
     return HttpResponseRedirect("/")
+
+def edit_profile(request):
+    if request.method == 'POST':
+        print("form POSTed")
+        user_form = UserUpdateForm(data=request.POST, instance=request.user)
+        profile_form = EditProfileForm(data=request.POST, instance=request.user.profile)
+        if user_form.is_valid() and profile_form.is_valid():
+            print("Form is valid")
+            user_form.save(commit=False)
+            user_form.email = user_form.cleaned_data.get("email")
+            user_form.username = user_form.cleaned_data.get("username")
+            user_form.save()
+            profile_form.save()
+            print(request.user)
+        redirect('edit_profile')
+    
+    else:
+        profile_form = EditProfileForm(instance=request.user.profile)
+        user_form = UserUpdateForm(instance=request.user)
+
+    return render(request, 'users/edit-profile.html', {'profile_form': profile_form, 'user_form': user_form,})

@@ -28,6 +28,7 @@
     <body>
         
         <header>
+
             {% if request.user.is_authenticated %}
             <nav class="navbar navbar-expand-lg bg-light pt-0" id="side-nav">
                 <button class="navbar-toggler m-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarOffcanvasLg" aria-controls="navbarOffcanvasLg">
@@ -56,33 +57,36 @@
                 </div>
             </nav>
             {% endif %}
+
             <div class="navbar fixed-top p-3 mb-3 border-bottom bg-light" id="top-nav">
                 <div class="container justify-content-end justify-content-md-between">
-                    {% if request.user.is_authenticated %}
-                        <form class="d-flex d-none d-md-flex">
-                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-outline-primary" type="submit">Search</button>
-                        </form>
 
-                        <div class="dropdown text-end">
-                            <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                                <img src="{% static 'img/user.png' %}" alt="mdo" width="32" height="32" class="rounded-circle">
-                            </a>
-                            <ul class="dropdown-menu text-small" id="profile-dropdown">
-                                <li><a class="dropdown-item" href="#">Profile</a></li>
-                                <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="{% url 'logout' %}">Sign out</a></li>
-                            </ul>
-                        </div>
-                    {% else %}
-                        <a href="/" class="text-dark text-decoration-none">
-                            <span class="fs-4">onTrack</span>
+                    {% if request.user.is_authenticated %}
+                    <form class="d-flex d-none d-md-flex">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-primary" type="submit">Search</button>
+                    </form>
+
+                    <div class="dropdown text-end">
+                        <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="{% static 'img/user.png' %}" alt="mdo" width="32" height="32" class="rounded-circle">
                         </a>
-                        <div class="text-end">
-                            <a href="{% url 'sign_in' %}" class="btn btn-outline-primary me-2">Sign In</a>
-                            <a href="{% url 'sign_up' %}" class="btn btn-primary">Sign Up</a>
-                        </div>
+                        <ul class="dropdown-menu text-small" id="profile-dropdown">
+                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="{% url 'logout' %}">Sign out</a></li>
+                        </ul>
+                    </div>
+                    {% else %}
+                    <a href="/" class="text-dark text-decoration-none">
+                        <span class="fs-4">onTrack</span>
+                    </a>
+                    <div class="text-end">
+                        <a href="{% url 'sign_in' %}" class="btn btn-outline-primary me-2">Sign In</a>
+                        <a href="{% url 'sign_up' %}" class="btn btn-primary">Sign Up</a>
+                    </div>
                     {% endif %}
+                    
                 </div>
             </div>
         </header>

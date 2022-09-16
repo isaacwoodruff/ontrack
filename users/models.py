@@ -9,9 +9,9 @@ class Profile(models.Model):
     If the Profile is deleted then it automatically deletes the user too
     '''
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
-    github = models.CharField(max_length=100, blank=True)
-    job_title = models.CharField(max_length=30, blank=True)
-    avatar = models.ImageField(upload_to='img')
+    github = models.CharField(max_length=100, default='github.com/your-github-profile', blank=True)
+    job_title = models.CharField(max_length=30, default='Your Job Title', blank=True)
+    avatar = models.ImageField(upload_to='img', blank=True)
 
 @receiver(post_save, sender=User)
 def create_profile(sender, instance, created, **kwargs):

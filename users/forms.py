@@ -2,6 +2,8 @@ from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Layout, Field, Submit, Div
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from django.forms import ModelForm, EmailField, CharField
+from users.models import Profile
 
 class UserForm(UserCreationForm):
     '''
@@ -57,3 +59,20 @@ class SignIn(AuthenticationForm):
             Field('password'),
             Submit('submit', 'Sign Up', css_class='button white w-100'),
         )
+
+class UserUpdateForm(ModelForm):
+    email = EmailField(required=False)
+    username = CharField(required=False)
+
+    class Meta:
+        model = User
+        fields = ["first_name", "last_name", "username", "email"]
+
+class EditProfileForm(ModelForm):
+    '''
+    This form is created from fields in the Profile model
+    '''
+    class Meta:
+        model = Profile
+        fields = ["github", "job_title", "avatar"]
+
