@@ -1,7 +1,7 @@
-from django.views.generic.edit import FormView
+from django.views.generic.edit import FormView, DeleteView
 from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponseRedirect
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .forms import UserForm, EditProfileForm, UserUpdateForm
 from django.contrib.auth.models import User
 
@@ -31,6 +31,9 @@ def logout_view(request):
     return HttpResponseRedirect("/")
 
 def edit_profile(request):
+    '''
+    A custom view is used instead of class based as 2 forms, user and profile are rendered as one
+    '''
     if request.method == 'POST':
         print("form POSTed")
         user_form = UserUpdateForm(data=request.POST, instance=request.user)
@@ -50,3 +53,14 @@ def edit_profile(request):
         user_form = UserUpdateForm(instance=request.user)
 
     return render(request, 'users/edit-profile.html', {'profile_form': profile_form, 'user_form': user_form,})
+
+class UserDeleteView(DeleteView):
+    '''
+    Delete user and user profile from database
+    '''
+    model = User
+    template_name = 'users/user_confirm_delete.html'
+    success_url = '/'
+
+    def get_object(self):
+        return get_object_or_404(User, pk=self.request.user.id)

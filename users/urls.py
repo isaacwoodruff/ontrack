@@ -19,4 +19,5 @@ urlpatterns = [
     path('edit-profile', views.edit_profile, name='edit_profile'),
     path('profile/', login_required(TemplateView.as_view(template_name="users/profile.html")), name='profile'),
     path('sign-out', views.logout_view, name='logout'),
+    path('delete-profile', views.UserDeleteView.as_view(), name='delete_profile'),
 ]
