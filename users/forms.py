@@ -57,7 +57,7 @@ class SignIn(AuthenticationForm):
         self.helper.layout = Layout(
             Field('username'),
             Field('password'),
-            Submit('submit', 'Sign Up', css_class='button white w-100'),
+            Submit('submit', 'Sign In', css_class='button white w-100'),
         )
 
 class UserUpdateForm(ModelForm):
