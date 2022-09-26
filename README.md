@@ -105,8 +105,6 @@ slug | null=False, unique=True | SlugField
 - Has a link at the bottom to sign up if the user doesn't have an account
 - Has a 'Forgot Password' option
 
-## Features Left To Implement
-
 ##### User Profile Page
 - Displays a form with user profile details. The form is autopopulated from their account in the database
 - The user has two options on the page, update their profile or delete their account
@@ -114,6 +112,8 @@ slug | null=False, unique=True | SlugField
 ##### Delete Account Page
 - Asks the user if they are sure they want to delete their profile
 - Requires the user to confirm with their email and password
+
+## Features Left To Implement
 
 ##### Dashboard
 - Shows current issues

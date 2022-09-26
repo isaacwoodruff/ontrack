@@ -22,6 +22,11 @@
     min-width: auto;
 }
 
+#profile {
+    max-width: 750px;
+    margin: auto;
+}
+
 @media (min-width: 576px) {
     #side-nav {
         position: relative;
