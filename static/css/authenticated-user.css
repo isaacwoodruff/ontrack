@@ -28,10 +28,6 @@
 }
 
 @media (min-width: 576px) {
-    #side-nav {
-        position: relative;
-    }
-
     .navbar-expand-lg .offcanvas {
         visibility: visible!important;
         transform: none!important;
@@ -40,5 +36,9 @@
     
     .navbar-expand-lg .navbar-toggler {
         display: none;
+    }
+
+    #main-content {
+        margin-left: 200px;
     }
 }
