@@ -89,6 +89,7 @@ created_date | auto_now_add=True | DateTimeField
 Key | Validation | Field Type |
 --- | --- | ---
 id | null=False, unique=True | PrimaryKey
+user | max_length=50, null=False | ForeignKey
 project_name | max_length=50, null=False | CharField
 created_date | auto_now_add=True | DateTimeField
 slug | null=False, unique=True | SlugField
